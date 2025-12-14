@@ -1,21 +1,22 @@
 #!/bin/sh
 set -e
 
+# Cores
+GREEN="\033[1;32m"
+YELLOW="\033[1;33m"
+RED="\033[1;31m"
+RESET="\033[0m"
+
 URL="https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 TMP_DEB="/tmp/vscode.deb"
 
-command -v curl >/dev/null 2>&1 || {
-    echo "curl não está instalado."
-    exit 1
-}
-
-echo "Baixando VS Code..."
+echo -e "${YELLOW}Baixando VS Code...${RESET}"
 curl -L "$URL" -o "$TMP_DEB"
 
-echo "Instalando..."
+echo -e "${YELLOW}Instalando...${RESET}"
 sudo apt install "$TMP_DEB"
 
-echo "Limpando arquivos temporários..."
+echo -e "${YELLOW}Limpando arquivos temporários...${RESET}"
 rm "$TMP_DEB"
 
-echo "VS Code instalado com sucesso."
+echo -e "${GREEN}VS Code instalado com sucesso! 🎉${RESET}"
