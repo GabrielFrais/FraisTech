@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linux Apps - Programas Essenciais para Linux</title>
     <meta name="description" content="Coleção curada de aplicativos e scripts recomendados para Linux">
+    <base href="/FraisTech/">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="icon" type="image/svg+xml" href="/icon.svg">
 </head>
@@ -21,7 +22,7 @@
             </div>
 
             <nav class="nav-menu">
-                <a href="" class="nav-link">Home</a>
+                <a href="./" class="nav-link">Home</a>
                 <a href="./terminal/" class="nav-link">Terminal</a>
                 <a href="./scripts/" class="nav-link">Scripts</a>
             </nav>
@@ -37,25 +38,25 @@
 
     <!-- Main Content -->
     <main class="container main-content">
-        <!-- Hero Section -->
-        <div class="hero-section">
-            <div class="hero-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="4 17 10 11 4 5"></polyline>
-                    <line x1="12" y1="19" x2="20" y2="19"></line>
-                </svg>
+        <!-- Scripts Section -->
+        <section id="scripts" class="scripts-section">
+            <div class="section-header">
+                <div class="section-title-wrapper">
+                    <svg class="section-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    <h2 class="section-title">Scripts Próprios</h2>
+                </div>
+                <p class="section-description">Scripts úteis para automatizar tarefas comuns no Linux</p>
             </div>
-            <h1 class="hero-title">
-                Programas Essenciais<br>
-                <span class="hero-title-accent">para Linux</span>
-            </h1>
-            <p class="hero-description">
-                Uma coleção curada de aplicativos recomendados para deixar seu sistema Linux mais produtivo
-            </p>
-        </div>
 
-        <!-- Categories Container -->
-        <div id="categories-container"></div>
+            <div id="scripts-container" class="scripts-grid"></div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -70,8 +71,8 @@
         </svg>
     </button>
 
-    <script src="assets/js/data_apps.js"></script>
-    <script src="assets/js/apps.js"></script>
-    <script src="assets/js/back-to-top.js"></script>
+    <script src="/FraisTech/assets/js/data_scripts.js"></script>
+    <script src="/FraisTech/assets/js/scripts.js"></script>
+    <script src="/FraisTech/assets/js/back-to-top.js"></script>
 </body>
 </html>

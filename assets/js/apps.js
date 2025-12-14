@@ -25,7 +25,10 @@ function createAppCard(app) {
     
     card.innerHTML = `
         <div class="card-header">
-            <h3 class="card-title">${app.name}</h3>
+            <div class="card-title-wrapper">
+                <h3 class="card-title">${app.name}</h3>
+                <span class="install-type">${app.type}</span>
+            </div>
             <p class="card-description">${app.description}</p>
         </div>
         <div class="card-content">
@@ -42,11 +45,35 @@ function createAppCard(app) {
         </div>
     `;
     
-    // Adicionar evento de click no botão de copiar
     const copyButton = card.querySelector('.btn-copy');
     copyButton.addEventListener('click', () => copyToClipboard(app.install, copyButton));
     
     return card;
+}
+
+// Função para criar navegação de categorias
+function createCategoryNav() {
+    const divNav = document.createElement('div');
+    divNav.className = 'nav-wrapper';
+
+    const nav = document.createElement('nav');
+    nav.className = 'category-nav';
+
+    divNav.appendChild(nav);
+    
+    const navList = document.createElement('div');
+    navList.className = 'category-nav-list';
+    
+    categories.forEach(category => {
+        const link = document.createElement('a');
+        link.href = `#${category.id}`;
+        link.className = 'category-nav-link';
+        link.textContent = category.title;
+        navList.appendChild(link);
+    });
+    
+    nav.appendChild(navList);
+    return divNav;
 }
 
 // Função para criar seção de categoria
@@ -75,55 +102,20 @@ function createCategorySection(category) {
     return section;
 }
 
-// Função para criar card de script
-function createScriptCard(script) {
-    const card = document.createElement('div');
-    card.className = 'script-card';
-    
-    const downloadUrl = `data:text/plain;charset=utf-8,${encodeURIComponent(script.code)}`;
-    
-    card.innerHTML = `
-        <div class="script-header">
-            <h3 class="script-title">${script.name}</h3>
-            <a href="${downloadUrl}" download="${script.file}" class="btn-download">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
-                Download
-            </a>
-        </div>
-        <p class="script-description">${script.description}</p>
-        <div class="code-block">
-            <pre><code>${script.code}</code></pre>
-        </div>
-        <p class="script-note">
-            Torne o script executável: <code>chmod +x ${script.file}</code>
-        </p>
-    `;
-    
-    return card;
-}
-
 // Renderizar categorias
 function renderCategories() {
     const container = document.getElementById('categories-container');
+    
+    // Adicionar navegação de categorias antes dos apps
+    container.appendChild(createCategoryNav());
+    
+    // Adicionar todas as seções
     categories.forEach(category => {
         container.appendChild(createCategorySection(category));
-    });
-}
-
-// Renderizar scripts
-function renderScripts() {
-    const container = document.getElementById('scripts-container');
-    scripts.forEach(script => {
-        container.appendChild(createScriptCard(script));
     });
 }
 
 // Inicializar quando o DOM estiver carregado
 document.addEventListener('DOMContentLoaded', () => {
     renderCategories();
-    renderScripts();
 });
