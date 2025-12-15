@@ -14,7 +14,7 @@ REPO="audacity/audacity"
 TMP="/tmp/${NOME}.AppImage"
 
 # Pega a URL do AppImage da última release
-URL=$(curl -s https://api.github.com/repos/$repo/releases/latest \
+URL=$(curl -s https://api.github.com/repos/$REPO/releases/latest \
       | grep browser_download_url \
       | grep 22.04.AppImage \
       | cut -d '"' -f 4)
