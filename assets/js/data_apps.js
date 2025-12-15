@@ -17,7 +17,7 @@ const categories = [
                 type: "apt"
             },
             {
-                name: "Docker (MEXER)",
+                name: "Docker (Em Deselvolvimento)",
                 description: "Plataforma para desenvolvimento, envio e execução de aplicativos em containers",
                 install: "curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh",
                 type: "script"
@@ -30,7 +30,7 @@ const categories = [
         description: "Aplicativos para aumentar sua produtividade",
         apps: [
             {
-                name: "Obsidian (MEXER)",
+                name: "Obsidian (Em Deselvolvimento)",
                 description: "Aplicativo de anotações em Markdown com gráfico de conhecimento",
                 install: "sudo snap install obsidian --classic",
                 type: "snap"
@@ -49,13 +49,13 @@ const categories = [
                 type: "apt"
             },
             {
-                name: "GIMP (MEXER)",
+                name: "GIMP (Em Deselvolvimento)",
                 description: "Editor de imagens open source similar ao Photoshop",
                 install: "sudo apt install gimp",
                 type: "apt"
             },
             {
-                name: "OBS Studio (MEXER)",
+                name: "OBS Studio (Em Deselvolvimento)",
                 description: "Software de gravação e streaming de vídeo",
                 install: "sudo apt install obs-studio",
                 type: "apt"
@@ -68,7 +68,7 @@ const categories = [
         description: "Mensagens e videoconferência",
         apps: [
             {
-                name: "Discord (MEXER)",
+                name: "Discord (Em Deselvolvimento)",
                 description: "Plataforma de comunicação para comunidades",
                 install: "sudo snap install discord",
                 type: "snap"

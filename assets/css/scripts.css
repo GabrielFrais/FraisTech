@@ -1,0 +1,121 @@
+:root {
+    --accent: oklch(0.7 0.2 140);
+}
+
+.icon-terminal {
+    color: var(--accent);
+}
+
+/* Scripts Section */
+.section-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-icon {
+    color: var(--accent);
+}
+
+.scripts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+    .scripts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Script Card */
+.script-card {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: all 0.3s;
+}
+
+.script-card:hover {
+    border-color: var(--accent);
+}
+
+.script-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.script-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.btn-download {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: none;
+    color: var(--foreground);
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.btn-download:hover {
+    background-color: var(--muted);
+}
+
+.script-description {
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+/* Code inline dentro de textos */
+.script-description code {
+    font-family: 'Courier New', Monaco, monospace;
+    font-size: 0.875rem;
+    color: var(--accent);
+    background-color: var(--muted);
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+}
+
+.code-block {
+    background-color: var(--secondary);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    overflow-x: auto;
+    margin-bottom: 0.75rem;
+}
+
+.code-block pre {
+    margin: 0;
+}
+
+.code-block code {
+    font-size: 0.75rem;
+    font-family: 'Courier New', monospace;
+    color: var(--secondary-foreground);
+}
+
+.script-note {
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+}
+
+.script-note code {
+    background-color: var(--muted);
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+    font-family: 'Courier New', monospace;
+}
