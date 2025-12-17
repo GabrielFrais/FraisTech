@@ -7,8 +7,8 @@ const categories = [
             {
                 name: "Dev Toolbox",
                 description: "Conjunto de ferramentas úteis para desenvolvedores em uma interface unificada.",
-                install: "",
-                type: ""
+                install: "flatpak install flathub me.iepure.devtoolbox",
+                type: "flatpak"
             },
             {
                 name: "Git",
@@ -19,8 +19,8 @@ const categories = [
             {
                 name: "Docker (Em Deselvolvimento)",
                 description: "Plataforma para desenvolvimento, envio e execução de aplicativos em containers",
-                install: "curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh",
-                type: "script"
+                install: "",
+                type: ""
             },
             {
                 name: "Visual Studio Code",
@@ -38,20 +38,20 @@ const categories = [
             {
                 name: "Betterbird",
                 description: "Cliente de e-mail baseado no Thunderbird com melhorias e correções extras.",
-                install: "",
-                type: ""
+                install: "curl -sL https://raw.githubusercontent.com/GabrielFrais/FraisTech/main/install_scripts/install_betterbird.sh | sh",
+                type: "tar.xz"
             },
             {
-                name: "Discord (Em Deselvolvimento)",
+                name: "Discord",
                 description: "Plataforma de chat por texto, voz e vídeo para comunidades e equipes.",
-                install: "",
-                type: ""
+                install: "curl -sL https://raw.githubusercontent.com/GabrielFrais/FraisTech/main/install_scripts/install_discord.sh | sh",
+                type: ".deb"
             },
             {
                 name: "Vesktop",
                 description: "Cliente Discord alternativo com foco em desempenho e recursos extras.",
-                install: "",
-                type: ""
+                install: "curl -sL https://raw.githubusercontent.com/GabrielFrais/FraisTech/main/install_scripts/install_vesktop.sh | sh",
+                type: ".deb"
             },
         ]
     },
@@ -63,8 +63,8 @@ const categories = [
             {
                 name: "KDE Connect",
                 description: "Integra o celular ao desktop para notificações, arquivos e controle remoto.",
-                install: "",
-                type: ""
+                install: "sudo apt install kdeconnect",
+                type: "apt"
             }
         ]
     },
@@ -76,19 +76,23 @@ const categories = [
             {
                 name: "Conky",
                 description: "Monitor de sistema altamente customizável que exibe informações na área de trabalho.",
-                install: "",
-                type: ""
+                install: "sudo apt install conky",
+                type: "apt"
             },
             {
                 name: "ConkyManager2",
                 description: "Interface gráfica para gerenciar temas e configurações do Conky.",
-                install: "",
-                type: ""
+                install: `sudo add-apt-repository ppa:teejee2008/foss
+sudo apt update
+sudo apt install conky-manager2`,
+                type: "apt"
             },
             {
                 name: "Plank",
                 description: "Dock simples e elegante para acesso rápido a aplicativos.",
-                install: "",
+                install: `sudo add-apt-repository ppa:ricotz/docky
+sudo apt update
+sudo apt install plank`,
                 type: ""
             }
         ]
@@ -226,8 +230,8 @@ sudo apt-get install -y spotify-client`,
             {
                 name: "Obsidian (Em Deselvolvimento)",
                 description: "Aplicativo de anotações em Markdown com gráfico de conhecimento",
-                install: "sudo snap install obsidian --classic",
-                type: "snap"
+                install: "",
+                type: ""
             },
             {
                 name: "ONLYOFFICE",
@@ -251,14 +255,16 @@ sudo apt-get install -y spotify-client`,
             {
                 name: "LocalSend",
                 description: "Compartilhamento de arquivos entre dispositivos na mesma rede, sem internet.",
-                install: "",
-                type: ""
+                install: "flatpak install flathub org.localsend.localsend_app",
+                type: "flatpak"
             },
             {
                 name: "qBittorrent",
                 description: "Cliente BitTorrent leve, rápido e sem anúncios.",
-                install: "",
-                type: ""
+                install: `sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
+sudo apt update
+sudo apt install qbittorrent`,
+                type: "apt"
             }
         ]
     },
@@ -270,26 +276,30 @@ sudo apt-get install -y spotify-client`,
             {
                 name: "CopyQ",
                 description: "Gerenciador avançado de área de transferência com histórico, busca e scripts.",
-                install: "",
-                type: ""
+                install: `sudo add-apt-repository ppa:hluk/copyq
+sudo apt update
+sudo apt install copyq`,
+                type: "apt"
             },
             {
                 name: "Espanso",
                 description: "Expansor de texto que substitui atalhos por frases completas automaticamente.",
-                install: "",
-                type: ""
+                install: "curl -sL https://raw.githubusercontent.com/GabrielFrais/FraisTech/main/install_scripts/install_espanso.sh | sh",
+                type: ".deb"
             },
             {
                 name: "FSearch",
                 description: "Ferramenta de busca ultrarrápida de arquivos no sistema.",
-                install: "",
-                type: ""
+                install: `sudo add-apt-repository ppa:christian-boxdoerfer/fsearch-stable
+sudo apt update
+sudo apt install fsearch`,
+                type: "apt"
             },
             {
                 name: "PeaZip",
                 description: "Compactador e descompactador de arquivos com suporte a diversos formatos.",
-                install: "",
-                type: ""
+                install: "curl -sL https://raw.githubusercontent.com/GabrielFrais/FraisTech/main/install_scripts/install_peazip.sh | sh",
+                type: ".deb"
             },
         ]
     },
@@ -307,8 +317,8 @@ sudo apt-get install -y spotify-client`,
             {
                 name: "Gear Lever",
                 description: "Gerenciador de AppImages que facilita instalar, atualizar, integrar ao sistema e remover aplicativos nesse formato.",
-                install: "",
-                type: ""
+                install: "flatpak install flathub it.mijorus.gearlever",
+                type: "flatpak"
             },
             {
                 name: "Mission Center",
@@ -317,10 +327,10 @@ sudo apt-get install -y spotify-client`,
                 type: "flatpak"
             },
             {
-                name: "OneDriver",
+                name: "OneDriver (Ubuntu 22.04)",
                 description: "Cliente não oficial do OneDrive para Linux com sincronização local.",
-                install: "",
-                type: ""
+                install: "curl -sL https://raw.githubusercontent.com/GabrielFrais/FraisTech/main/install_scripts/install_onedriver.sh | sh",
+                type: ".deb"
             },
             {
                 name: "Warehouse",
